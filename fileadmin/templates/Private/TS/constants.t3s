@@ -1,0 +1,23 @@
+
+### Titel und Slogan ###
+TITLE = TYPO3 Templates 4u
+SLOGAN = TYPO3 Template auf Basis von initializr.com
+
+### Logo ###
+LOGO = Haus.png
+
+### URL ###
+baseURL = http://t3template4u.de/
+
+### ID der Startseite ###
+WEBSITE_ID = 1
+
+### ID der Header-Navigation ###
+METANAV_ID = 4
+
+### Konstanten ###
+styles.content.imgtext.maxW = 1250
+styles.content.imgtext.maxWInText = 1250
+styles.content.imgtext.linkWrap.width = 1600
+styles.content.loginform.pid = 0
+plugin.tq_seo.services.googleAnalytics.anonymizeIp = 1

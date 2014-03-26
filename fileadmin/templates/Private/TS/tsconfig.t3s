@@ -1,0 +1,27 @@
+
+TCEFORM.pages.layout {
+  altLabels.0 = 3 Spalten
+  altLabels.1 = 2 Spalten (links)
+  altLabels.2 = 2 Spalten (rechts)
+  altLabels.3 = 1 Spalte
+}
+
+RTE.default.proc
+TCEFORM.tt_content.section_frame.altLabels {
+#  1 = Unsichtbar
+#  5 = Linie davor
+#  6 = undefiniert
+# 10 = Text Zweispaltig
+# 11 = undefiniert
+# 12 = undefiniert
+# 20 = Rahmen 1
+# 21 = Rahmen 2
+}
+
+## Klassen hinzufuegen 
+RTE.default.proc.allowedClasses := addToList(button, icon-file-pdf, icon-file-excel)
+RTE.default.buttons {
+  blockstyle.tags.div.allowedClasses := addToList(button) 
+  textstyle.tags.span.allowedClasses := addToList(button) 
+  link.properties.class.allowedClasses := addToList(button, icon-file-pdf, icon-file-excel) 
+}

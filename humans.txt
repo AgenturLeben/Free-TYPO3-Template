@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Develope:
+	Phillip Baumgärtner
+	baumgaertner@t3template4u.de
+	https://twitter.com/baumpaul
+
+# THANKS
+
+    typo3.org
+    initializr.com
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr

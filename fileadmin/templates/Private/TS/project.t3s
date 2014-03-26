@@ -1,0 +1,43 @@
+
+# DATEILISTE
+# Dateinamen in Titel ändern
+tt_content.uploads.20.renderObj.20.data = file:current:title
+
+
+# POWERMAIL
+# Bei dem einsatz von Powermail kann es zu problemen mit jQuery.
+# Die Einträge entfernen die Powermial JavaScript-Libraries im Footer.
+#page.includeJSFooterlibs.powermailJQuery >
+#page.includeJSFooterlibs.powermailJQueryUi >
+
+
+#lib.component.document.atmopic = COA
+#lib.component.document.atmopic {
+#  10 = IMG_RESOURCE
+#  10 {
+#    file {
+#      import {
+#        cObject = TEXT
+#        cObject {
+#          value = {$portal.component.atmopic.filename}
+#          override {
+#            required = 1
+#            cObject = FILES
+#            cObject {
+#              references.data = levelmedia:-1, slide
+#              references.listNum = 0
+#              renderObj = TEXT
+#              renderObj.data = file:current:publicUrl:url('|')";
+#            }
+#          }
+#        }
+#      }
+#    }
+#  }
+#  stdWrap.wrap = style="background-image:url('|')";
+#}
+#page.10.subparts.NAVIMAGE < lib.component.document.atmopic
+
+
+lib.parseFunc_RTE.tags.img.postUserFunc.imageLinkWrap.linkParams.ATagParams.dataWrap = class="t3colorbox" data-rel="cbox"
+tt_content.image.20.1.imageLinkWrap.linkParams.ATagParams.dataWrap = class="t3colorbox" data-rel="cbox"
