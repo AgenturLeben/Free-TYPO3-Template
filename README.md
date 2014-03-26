@@ -8,3 +8,4 @@ Das Template wurde für TYPO3 6.1.7 erstellt.
 Installation
 ===================
 1. Alle Dateien im Verzeichnis /typo3_root/ in eure TYPO3 Installation kopieren.
+2. t3d-Datei Importieren
