@@ -221,9 +221,9 @@ span.important {
     background-color: #e11e19;
 }
 
-.indent {
-    margin:1.563em;
-}
+.indent { margin:1.563em; }
+
+.align-center { text-align: center; }
 
 a.external-link-new-window {}
 

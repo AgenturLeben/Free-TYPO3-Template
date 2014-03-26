@@ -8,4 +8,6 @@ Das Template wurde für TYPO3 6.1.7 erstellt.
 Installation
 ===================
 1. Alle Dateien im Verzeichnis /typo3_root/ in eure TYPO3 Installation kopieren.
-2. t3d-Datei Importieren
+2. Extensions installieren -> http://t3template4u.de/typo3-template/extensions/
+3. t3d-Datei Importieren
+4. Konstanten anpassen
