@@ -10,10 +10,10 @@ RTE.default.proc
 TCEFORM.tt_content.section_frame.altLabels {
 #  1 = Unsichtbar
 #  5 = Linie davor
-#  6 = undefiniert
-# 10 = Text Zweispaltig
-# 11 = undefiniert
-# 12 = undefiniert
+#  6 = Linie danach
+# 10 = Einrücken
+# 11 = Einrücken 33,66
+# 12 = Einrücken 66,33
 # 20 = Rahmen 1
 # 21 = Rahmen 2
 }

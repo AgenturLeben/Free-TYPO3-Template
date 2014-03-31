@@ -12,7 +12,7 @@ function checkHover() {
 $(function() {
 
     /* Pageslide */
-    var navToggle = ['<a class="nav-open" href="#dropdown-nav"></a>'].join("");
+    var navToggle = ['<a class="nav-open icon-menu" href="#dropdown-nav"></a>'].join("");
     $(".header-container header.wrapper").append(navToggle)
     /* Button zur Einblenden des Hauptmenüs wird per JavaScript erstellt und in den Header eingefügt */
     
