@@ -1,5 +1,5 @@
 /* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+    Basis: t3template4u.de und h5bp.com
    ========================================================================== */
 
 html,
@@ -72,9 +72,9 @@ textarea {
     text-decoration: underline !important;
 }
 
-/* ===================
+/* ===============
     Theme
-   =================== */
+   =============== */
 
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
@@ -103,9 +103,9 @@ aside[class*="_col"] { border-top: .5em solid rgba(0,0,0,0.3); }
 
 .footer-container .wrapper { padding: 0 5%;}
 
-/* ==============
+/* ===============
     Menu
-   ============== */
+   =============== */
 
 nav {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -227,27 +227,10 @@ span.important {
 
 a.external-link-new-window {}
 
-.button {
-    border: 1px solid hsla(0, 0%, 0%, 0.1);
-    background: hsla(0, 0%, 0%, 0.1);
-    display: block;
-    text-align: center;
-    border-radius: .3em;
-    padding: .3em 1em;
-    color: #222;
-    text-decoration: none !important;
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-transform: uppercase;
-}
 
-.button:hover {
-    background: hsla(0, 0%, 100%, 0.8);
-    border-color: hsla(0, 0%, 100%, 0.8);
-}
-
-/* ==============
+/* ===============
     Main
-   ============== */
+   =============== */
 
 a { color: #137e0b; }
 
@@ -273,10 +256,92 @@ a:hover {
 
 .header-container div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image { margin-bottom: 0; }
 
+/* ===============
+    Formulare
+   =============== */
 
-/* ==============
+.button,
+button,
+input[type="submit"] {
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    background: hsla(0, 0%, 0%, 0.1);
+    display: block;
+    text-align: center;
+    border-radius: .3em;
+    padding: 1em .1em;
+    color: #222;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-style: 1.17em;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: hsla(0, 0%, 100%, 0.8);
+    border-color: hsla(0, 0%, 100%, 0.8);
+}
+
+input, textarea, select {
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    background: hsla(0, 0%, 0%, 0.1);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto !important;
+}
+
+label em, legend em {
+    font-size: .688em;
+    line-height: 1em;
+}
+
+div.csc-mailform li {
+    list-style: none;
+}
+
+div.csc-mailform .csc-form-element {
+    clear: both;
+    padding: .5em 0;
+}
+
+div.csc-mailform li label {
+    display: block;
+    width: 100%;
+    margin: 0;
+    float: none;
+}
+
+div.csc-mailform input,
+div.csc-mailform textarea,
+div.csc-mailform select,
+fieldset.fieldset-subgroup legend {
+    width: 100%;
+}
+
+div.csc-mailform .csc-form-element-checkboxgroup label,
+div.csc-mailform .csc-form-element-radio label {
+    display: inline;
+    width: auto !important;
+    float: none !important;
+}
+
+div.csc-mailform .csc-form-element-checkboxgroup input,
+div.csc-mailform .csc-form-element-radio input {
+    float: left;
+    margin-right: .5em;
+}
+
+div.csc-mailform fieldset ol {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===============
     Extensions
-   ============== */
+   =============== */
 .flexslider {
     margin-bottom: 0;
 }
@@ -289,7 +354,6 @@ a:hover {
     display: none;
 }
 
-
 /* ===============
     IE Fixes
    =============== */
@@ -298,9 +362,8 @@ a:hover {
     padding-top: 20px;
 }
 
-
 /* ==========================================================================
-   Media Queries
+    Media Queries
    ========================================================================== */
 
 @media only screen and (min-width: 480px) {
@@ -327,9 +390,9 @@ a:hover {
 
 @media only screen and (min-width: 768px) {
 
-/* ====================
+/* ===============
     Theme
-   ==================== */
+   =============== */
 
     .footer-container .wrapper,
     .main-container .wrapper { padding: 0 2.5%; }
@@ -377,9 +440,10 @@ a:hover {
         float: none;
     }
 
-/* ====================
+
+/* ===============
     Menu
-   ==================== */
+   =============== */
 
     nav li {
         display: inline-block;
@@ -566,20 +630,19 @@ a:hover {
         margin: 1em  2.5%;
     }
 
-/* ==============
+/* ===============
     Main
-   ============== */
+   =============== */
 
    .logo { text-align: left; }
 
 }
 
-
 @media only screen and (min-width: 1024px) {
 
-/* ====================
+/* ===============
     Theme
-   ==================== */
+   =============== */
     aside[class*="_col"] {
         border-top: 0;
     }
@@ -646,13 +709,47 @@ a:hover {
         float: none;
     }
 
+
 /* ===============
-    RTE Styles
+    Formulare
    =============== */
 
-    .button {
+    .button,
+    button,
+    input[type="submit"] {
         display: inline-block;
         min-width: 8em;
+        width: auto !important;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    div.csc-mailform li label {
+        width: 40%;
+        float: left;
+        padding-right: 1em;
+    }
+
+    div.csc-mailform input,
+    div.csc-mailform textarea,
+    div.csc-mailform select {
+        width: 60%;
+    }
+
+    div.csc-mailform .csc-form-element-submit {
+        text-align: center;
+    }
+
+    fieldset.fieldset-subgroup legend {
+        width: 40%;
+        float: left;
+    }
+
+    div.csc-mailform fieldset ol {
+        padding: 0;
+        margin: 0;
+        float: right;
+        width: 60%;
     }
 
 }
@@ -668,9 +765,10 @@ a:hover {
         margin: 0 auto;
     }
 
-/* ====================
+
+/* ===============
     Menu
-   ==================== */
+   =============== */
 
     nav#dropdown-nav {
         border-radius: .3em;
@@ -686,9 +784,10 @@ a:hover {
         margin: 0 auto;
     }
 
-/* ====================
+
+/* ===============
     Main
-   ==================== */
+   =============== */
    
    .header-container .csc-default > * {
         width: 1500px;
@@ -698,7 +797,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Helper classes
+    Helper classes
    ========================================================================== */
 
 * {
@@ -766,8 +865,9 @@ a:hover {
     *zoom: 1;
 }
 
+
 /* ==========================================================================
-   Print styles
+    Print styles
    ========================================================================== */
 
 @media print {
