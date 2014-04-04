@@ -184,6 +184,9 @@ page {
         stdWrap.typolink.parameter = {$WEBSITE_ID}
       }
       
+      GOOGLE_TAG_MANAGER = TEXT
+      GOOGLE_TAG_MANAGER.value = {$GOOGLE_TAG_MANAGER}
+      
     }
   }
   3000 = TEXT

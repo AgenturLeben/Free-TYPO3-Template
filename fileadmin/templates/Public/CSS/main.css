@@ -285,6 +285,7 @@ input[type="submit"]:hover {
 input, textarea, select {
     border: 1px solid hsla(0, 0%, 0%, 0.1);
     background: hsla(0, 0%, 0%, 0.1);
+    padding: .5em 1em;
 }
 
 input[type="checkbox"],
@@ -337,6 +338,14 @@ div.csc-mailform fieldset ol {
     top: 0;
     margin: 0;
     padding: 0;
+}
+
+/* 
+    Alle Felder bis auf das Nachrichten-Feld ausblenden.
+    Die Felder werdern per JS wieder eingeblendet.
+*/
+.js .csc-form-element:not(.csc-form-element-textarea) {
+    display: none;
 }
 
 /* ===============
