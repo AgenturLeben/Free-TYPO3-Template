@@ -18,16 +18,6 @@
     </head>
     <body lang="de" class="col3-layout">
         <!-- ###LAYOUT### start -->
-        
-        <!-- Google Tag Manager -->
-        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=<!-- ###GOOGLE_TAG_MANAGER### -->GTM-MSZJBN<!-- ###GOOGLE_TAG_MANAGER### -->"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','<!-- ###GOOGLE_TAG_MANAGER### -->GTM-MSZJBN<!-- ###GOOGLE_TAG_MANAGER### -->');</script>
-        <!-- End Google Tag Manager -->
 
         <!--[if lt IE 7]>
             <div class="chromeframe">Sie verwenden einen <b>veralteten Browser</b> mit <b>Sicherheitsschwachstellen</b> und <b>können nicht alle Funktionen dieser Webseite nutzen.</b> <a href="http://www.browser-update.org/de/update.html">Hier erfahren Sie, wie einfach Sie Ihren Browser aktualisieren können.</a></div>
@@ -135,7 +125,13 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/fileadmin/templates/Public/JS/jquery-1.10.1.min.js"><\/script>')</script>
 
-        <script src="/fileadmin/templates/Public/JS/main.js"></script>     
+        <script src="/fileadmin/templates/Public/JS/main.js"></script>
 
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>

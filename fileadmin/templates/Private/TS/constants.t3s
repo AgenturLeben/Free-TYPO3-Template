@@ -15,9 +15,6 @@ WEBSITE_ID = 1
 ### ID der Header-Navigation ###
 METANAV_ID = 4
 
-### Google Tag Manager ID (www.google.de/tagmanager/) ###
-GOOGLE_TAG_MANAGER = GTM-MSZJBN
-
 ### Konstanten ###
 styles.content.imgtext.maxW = 1250
 styles.content.imgtext.maxWInText = 1250
