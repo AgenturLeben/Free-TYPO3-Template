@@ -3,7 +3,7 @@ Free-TYPO3-Template
 
 Freies Responsive, HTML5, CSS3, TYPO3-Template von http://t3template4u.de
 
-Das Template wurde für TYPO3 6.2 erstellt. 
+Das Template wurde für TYPO3 6.2.x erstellt. Es geht aber auch auf älternen Installationen.
 
 Installation
 ===================
