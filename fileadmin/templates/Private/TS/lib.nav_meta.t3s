@@ -1,0 +1,35 @@
+lib.navigation_meta = HMENU
+lib.navigation_meta {
+  special = directory
+  special.value = {$METANAV_ID}
+  
+  ### Ebene 1 ###
+  1 = TMENU
+  1 {
+    wrap = <nav id="meta-nav"><ul class="level1">|</ul></nav>
+    noBlur = 1
+    #expAll = 1
+    
+    NO = 1
+    NO {
+      before.dataWrap = <li class="pageUid_{field:uid} no">|
+      wrapItemAndSub = |</li>
+      ATagTitle.field = subtitle // abstract // title
+    }
+    
+    ACT < .NO
+    ACT.before.dataWrap = <li class="pageUid_{field:uid} act">|
+    
+    CUR < .NO
+    CUR.before.dataWrap = <li class="pageUid_{field:uid} cur">|
+    
+    #SPC < .NO
+    #SPC.before.dataWrap = <li class="pageUid_{field:uid} spc"><span>|
+    #SPC.wrapItemAndSub = |</span></li>
+    
+    #USR < .SPC
+    #USR.before.dataWrap = <li class="pageUid_{field:uid} usr"><span>|
+  }
+}
+
+page.10.subparts.NAVIGATION_META < lib.navigation_meta

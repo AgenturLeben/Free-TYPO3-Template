@@ -1,0 +1,44 @@
+lib.navigation = HMENU
+lib.navigation {
+  entryLevel = 0
+  
+  1 = TMENU
+  1 {
+    wrap = <nav id="nav"><ul class="level1">|</ul></nav>
+    noBlur = 1
+    expAll = 1
+    
+    NO = 1
+    NO {
+      before.dataWrap = <li class="pageUid_{field:uid} no">|
+      wrapItemAndSub = |</li>
+      ATagTitle.field = subtitle // abstract // title
+    }
+    
+    ACT < .NO
+    ACT.before.dataWrap = <li class="pageUid_{field:uid} act">|
+    
+    CUR < .NO
+    CUR.before.dataWrap = <li class="pageUid_{field:uid} cur">|
+    
+    SPC < .NO
+    SPC.before.dataWrap = <li class="pageUid_{field:uid} spc"><span>|
+    SPC.wrapItemAndSub = |</span></li>
+    
+    #USR < .SPC
+    #USR.before.dataWrap = <li class="pageUid_{field:uid} usr"><span>|
+  }
+  
+  2 < .1
+  2.wrap = <ul class="level2">|</ul>
+  2.expAll = 0
+  
+  3 < .2
+  3.wrap = <ul class="level3">|</ul>
+  
+  4 < .3
+  4.wrap = <ul class="level4">|</ul>
+  
+}
+
+page.10.subparts.NAVIGATION < lib.navigation

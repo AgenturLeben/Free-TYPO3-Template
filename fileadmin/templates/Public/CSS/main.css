@@ -120,13 +120,21 @@ nav a {
     display: block;
     padding: 1em 0;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     color: white;
     border-bottom: 1px solid #666;
 }
 
-nav a:hover,
-#body1 nav .pageUid_76 a /* Startseite */ {
+nav .spc {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+nav [title="Meta-Navigation"] {
+    display: none !important;
+}
+
+#pageslide nav a:hover {
     color: white;
     text-decoration: none;
     background: hsl(0, 0%, 15%);
@@ -509,69 +517,83 @@ div.csc-mailform fieldset ol {
    =============== */
 
     nav li {
-        display: inline-block;
-        margin-right: 1%;
-    }
-
-    nav li:last-child {
-        margin-right: 0;
+        display: block;
+        margin-bottom: 2px;
     }
 
     nav a {
-        padding: .5em 1em;
-        margin-bottom: 0;
-        white-space: nowrap;
-        border-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-    nav .level2 li {
-        margin-right: 0;
-        display: block;
-    }
-
-    nav .level2 li a {
         text-align: left;
+        padding: .5em 1em;
+        border: 1px solid hsla(0, 0%, 0%, 0.1);
+        
     }
 
+    nav a:hover,
+    nav .cur a {
+        border-color: #fff;
+    }
+
+    nav .cur a,
+    nav .act a {
+        background: hsla(0, 0%, 0%, 0.8);
+        color: white;
+    }
+
+    nav .level2 {
+        margin: 2px 0 .5em 1em;
+    }
+
+    nav .no a {
+        background: hsla(0, 0%, 0%, 0.1);
+        color: #222;
+    }
+
+
+    
     nav#dropdown-nav {
         background: hsla(0, 0%, 0%, 0.8);
         padding: .5em;
     }
 
-    nav#dropdown-nav a {
-        background: hsla(0, 0%, 0%, 0.8);
-        border: 1px solid hsla(0, 0%, 0%, 0.8);
-        border-radius: .3em;
-    }
-
-    nav#dropdown-nav a:hover,
-    nav#dropdown-nav .cur a,
-    nav#dropdown-nav .act a,
-    #body1 nav#dropdown-nav .pageUid_76 a /* Startseite */ {
-        border-color: white;
+    nav#dropdown-nav .level1 > li {
+        display: inline-block;
+        margin-right: 1%;
+        position: relative;
     }
 
     nav#dropdown-nav .level2 {
         display: none;
         position: absolute;
+        top: 2em;
         z-index: 99;
-        padding-top: 1em;
-    }
-
-    nav#dropdown-nav .level2 li {
-        margin-bottom: 2px;
     }
 
     nav#dropdown-nav .level3 {
-        margin: 2px 0 2px 1em;
+        margin: 2px 0 .5em 1em;
+    }
+
+    nav#dropdown-nav a {
+        background: hsla(0, 0%, 100%, 0.1);
+        border: 1px solid hsla(0, 0%, 0%, 0.8);
+        border-radius: .3em;
+        color: white;
+        white-space: nowrap;
+    }
+
+    nav#dropdown-nav .cur > a,
+    nav#dropdown-nav .act > a {
+        background: #1371aa;
+    }
+
+    nav#dropdown-nav a:hover,
+    nav#dropdown-nav a.inpath,
+    nav#dropdown-nav .cur a {
+        border-color: white;
+    }
+
+    nav#dropdown-nav .level2 .no > a,
+    nav#dropdown-nav .level2 .ifsub > a {
+        background: hsla(0, 0%, 0%, 0.8);
     }
 
     nav#dropdown-nav.fixed {
@@ -584,66 +606,21 @@ div.csc-mailform fieldset ol {
         border-radius: 0;
     }
 
-    nav#nav-geteilt-second {
-        margin-top: 1em;
-    }
-
-    nav#nav-geteilt-second li {
-        display: block;
-        text-align: left;
-        margin-bottom: 2px;
-    }
-
-    nav#nav-geteilt-second a {
-        text-align: left;
-        background: hsla(0, 0%, 0%, 0.1);
-        border: 1px solid hsla(0, 0%, 0%, 0.1);
-        color: #222;
-    }
-
-    nav#nav-geteilt-second a:hover,
-    nav#nav-geteilt-second .cur a {
-        border-color: #fff;
-    }
-
-    nav#nav-geteilt-second .cur a,
-    nav#nav-geteilt-second .act a {
-        background: hsla(0, 0%, 0%, 0.8);
-        color: white;
-    }
-
-    nav#nav-geteilt-second .level3 {
-        margin: 2px 0 .5em 10%;
-    }
-
-    nav#nav-geteilt-second .level3 a {
-        text-align: left;
-        background: hsla(0, 0%, 0%, 0.1);
-        border: 1px solid hsla(0, 0%, 0%, 0.1);
-        color: #222;
-    }
-
-    nav#nav-geteilt-second .level3 a:hover,
-    nav#nav-geteilt-second .level3 .cur a {
-        border-color: #fff;
-    }
-
-    nav#nav-geteilt-second .level3 .cur a,
-    nav#nav-geteilt-second .level3 .act a {
-        background: hsla(0, 0%, 0%, 0.8);
-        color: white;
-    }
-
-    nav#nav-geteilt-second .level3 {
-        margin: 2px 0 .5em 10%;
-    }
-
     nav#meta-nav {
         position: absolute;
         top: 0;
         right: 0;
         width: 80%;
-        text-align: right
+        text-align: right;
+    }
+
+    nav#meta-nav li {
+        display: inline-block;
+        margin-left: 2px;
+    }
+
+    nav#meta-nav a {
+        display: inline-block;
     }
 
 /* ===============
