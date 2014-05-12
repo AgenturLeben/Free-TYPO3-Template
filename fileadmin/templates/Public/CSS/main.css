@@ -32,6 +32,28 @@ body {
     text-shadow: none;
 }
 
+a {
+    color: #1371aa;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6  {
+    margin-top: 0;
+}
+
+h1 {
+    -webkit-column-break-before: column;
+       -moz-column-break-before: column;
+            column-break-before: column;
+    -webkit-column-span: all;
+       -moz-column-span: all;
+            column-span: all;
+}
+
 hr {
     display: block;
     height: 1px;
@@ -45,6 +67,9 @@ img {
     vertical-align: middle;
     max-width: 100%;
     height: auto;
+    -webkit-column-break-after: column;
+       -moz-column-break-after: column;
+            column-break-after: column;
 }
 
 fieldset {
@@ -61,7 +86,7 @@ textarea {
     margin: 0 0 1em 0;
     background: #FDF2AB;
     color: #000;
-    padding: 1em;
+    padding: .25em 1em;
     border-bottom: 1px solid #A29330;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
@@ -80,6 +105,7 @@ body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
     font-family: 'Open Sans', sans-serif;
     background: url(../IMG/purty_wood.png);
+    min-width: 320px;
 }
 
 .wrapper {
@@ -199,22 +225,38 @@ nav [title="Meta-Navigation"] {
 
 [class*="_col"] > [class*="csc-"] {
     padding: 0 5%;
+    margin: 1em 0;
     clear: both;
+}
+
+[class*="_col"] > [class*="csc-"]:before,
+[class*="_col"] > [class*="csc-"]:after {
+    content: " ";
+    display: table;
+}
+
+[class*="_col"] > [class*="csc-"]:after {
+    clear: both;
+}
+
+[class*="_col"] > [class*="csc-"] {
+    *zoom: 1;
 }
 
 .main .csc-default {}
 .main .csc-frame {}
+
 .main .csc-frame-invisible {
     opacity: .25;
     filter: alpha(opacity=75);
 }
 
 .main .csc-frame-rulerBefore {
-    border-top:2px solid #004B96;
+    border-top: .5em solid #1371aa;
 }
 
 .main .csc-frame-rulerAfter {
-    border-bottom:2px solid #004B96;
+    border-bottom: .5em solid #1371aa;
 }
 
 .main .csc-frame-indent {
@@ -222,63 +264,47 @@ nav [title="Meta-Navigation"] {
     margin: 0 auto;
 }
 
-.main .csc-frame-indent3366 {
-}
+.main .csc-frame-indent3366 {}
 
-.main .csc-frame-indent6633 {
-}
+.main .csc-frame-indent6633 {}
 
-.main .csc-frame-frame1 {
+.main .csc-frame-frame1,
+.main .csc-frame-frame2 {
     padding-top: .5em;
     padding-bottom: .5em;
-    margin: 1em 5%;
-    border: 2px solid hsla(0, 0%, 20%, .75);
-    border-radius: .5em;
-    
-    background: -moz-linear-gradient(45deg,  hsla(0,0%,100%,0.1) 0%, hsla(0,0%,100%,0.5) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,hsla(0,0%,100%,0.1)), color-stop(100%,hsla(0,0%,100%,0.5))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(45deg,  hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0.5) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(45deg,  hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0.5) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(45deg,  hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,0.5) 100%); /* IE10+ */
-    background: linear-gradient(45deg,  hsla(0,0%,100%,0.1) 0%,hsla(0,0%,100%,.5) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#80ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: white;
     -webkit-box-shadow: 0.3em 0.3em 0.5em 0.1em hsla(0, 0%, 20%, .75);
     -moz-box-shadow:    0.3em 0.3em 0.5em 0.1em hsla(0, 0%, 20%, .75);
     box-shadow:         0.3em 0.3em 0.5em 0.1em hsla(0, 0%, 20%, .75);
 }
 
 .main .csc-frame-frame2 {
-    padding-top: .5em;
-    padding-bottom: .5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    background: #fff;
-    -webkit-box-shadow: 0.3em 0.3em 0.5em 0.1em hsla(0, 0%, 20%, .75);
-    -moz-box-shadow:    0.3em 0.3em 0.5em 0.1em hsla(0, 0%, 20%, .75);
-    box-shadow:         0.3em 0.3em 0.5em 0.1em hsla(0, 0%, 20%, .75);
+    background: #1371aa;
+    color: white;
 }
 
 /* ===============
     RTE Styles
    =============== */
 
-span.detail,
-span.name-of-person,
-span.important {
+.detail,
+.name-of-person,
+.important {
     font-weight: bold;
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
     padding: 0 .2em;
 }
-span.detail {  
+.detail {  
     background-color: #41AD49;
 }
-span.name-of-person {
+.name-of-person {
     background-color: #fab400;
     color: #fff;
 }
-span.important {
+.important {
     background-color: #e11e19;
 }
 
@@ -292,13 +318,6 @@ a.external-link-new-window {}
 /* ===============
     Main
    =============== */
-
-a { color: #1371aa; }
-
-a:hover {
-    color: #000;
-    text-decoration: underline;
-}
 
 .logo {
     text-align: center;
@@ -406,7 +425,7 @@ div.csc-mailform fieldset ol {
     Alle Felder bis auf das Nachrichten-Feld ausblenden.
     Die Felder werdern per JS wieder eingeblendet.
 */
-.js .csc-form-element:not(.csc-form-element-textarea) {
+.js .csc-form-element:not(.csc-form-element-textarea):not(.csc-form-element-submit) {
     display: none;
 }
 
@@ -631,24 +650,6 @@ div.csc-mailform fieldset ol {
         padding: 0;
     }
 
-    .main .csc-default {}
-    .main .csc-frame {}
-    .main .csc-frame-invisible {
-        opacity: .25;
-        filter: alpha(opacity=75);
-    }
-
-    .main .csc-frame-rulerBefore {
-        border-top:2px solid #004B96;
-    }
-
-    .main .csc-frame-rulerAfter {
-        border-bottom:2px solid #004B96;
-    }
-
-    .main .csc-frame-indent {
-    }
-
     .main .csc-frame-indent3366 {
         width:42.5%;
         margin-right: 0;
@@ -675,6 +676,52 @@ div.csc-mailform fieldset ol {
    =============== */
 
    .logo { text-align: left; }
+
+/* ===============
+    Spalten
+   =============== */
+    
+    .col-set > .col {
+        float: left;
+        position: relative;
+        margin-right: 2.5% !important;
+    }
+
+    /* 2 Spalten */
+    .col-2-set > .col {
+        width: 48.5%;
+    }
+
+    /* Abstände */
+    .col-2-set > .col:nth-of-type(2n) {
+        margin-right: 0 !important;
+    }
+
+    .col-2-set > .col:nth-of-type(2n+1) {
+        clear: left !important;
+    }
+
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+
+/* ===============
+    Spalten
+   =============== */
+    
+    /* Alle Spalten */
+    .col-set > .col {
+        width: 48.5%;
+    }
+
+    /* Abstände */
+    .col-set > .col:nth-of-type(2n) {
+        margin-right: 0 !important;
+    }
+
+    .col-set > .col:nth-of-type(2n+1) {
+        clear: left !important;
+    }
 
 }
 
@@ -792,6 +839,24 @@ div.csc-mailform fieldset ol {
         margin: 0;
         float: right;
         width: 60%;
+    }
+
+/* ===============
+    Spalten
+   =============== */
+    
+    /* 3 Spalten */
+    .col-3-set > .col {
+        width: 31.6666666667% !important;
+    }
+
+    /* Seitenabstände */
+    .col-3-set > .col:nth-of-type(3n) {
+        margin-right: 0 !important;
+    }
+
+    .col-3-set > .col:nth-of-type(3n+1) {
+        clear: left !important;
     }
 
 }

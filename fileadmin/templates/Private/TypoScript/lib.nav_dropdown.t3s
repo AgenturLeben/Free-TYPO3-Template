@@ -1,0 +1,57 @@
+lib.navigation_dropdown = HMENU
+lib.navigation_dropdown {
+  entryLevel = 0
+  
+  1 = TMENU
+  1 {
+        wrap = <nav id="dropdown-nav"><ul class="level1">|</ul></nav>
+    noBlur = 1
+    expAll = 1
+    
+    NO = 1
+    NO {
+      before.dataWrap = <li class="pageUid_{field:uid} no">|
+      wrapItemAndSub = |</li>
+      ATagTitle.field = subtitle // abstract // title
+    }
+    
+    IFSUB < .NO
+    IFSUB.before.dataWrap = <li class="pageUid_{field:uid} ifsub">|
+    
+    ACT < .NO
+    ACT.before.dataWrap = <li class="pageUid_{field:uid} act">|
+    
+    ACTIFSUB < .NO
+    ACTIFSUB.before.dataWrap = <li class="pageUid_{field:uid} act ifsub">|
+    
+    CUR < .NO
+    CUR.before.dataWrap = <li class="pageUid_{field:uid} cur">|
+    
+    CURIFSUB < .NO
+    CURIFSUB.before.dataWrap = <li class="pageUid_{field:uid} cur ifsub">|
+    
+    #USR < .NO
+    #USR.before.dataWrap = <li class="pageUid_{field:uid} usr">|
+    
+    #SPC < .NO
+    #SPC.before.dataWrap = <li class="pageUid_{field:uid} spc">|
+  }
+  
+  2 < .1
+  2.wrap = <ul class="level2">|</ul>
+  
+  3 < .1
+  3.wrap = <ul class="level3">|</ul>
+  
+  4 < .1
+  4.wrap = <ul class="level4">|</ul>
+  
+}
+
+page {
+  includeCSS.file576 = fileadmin/templates/Public/CSS/pageslide.css
+  includeJSFooterlibs.file576 = fileadmin/templates/Public/JS/pageslide.min.js
+  includeJSFooter.file576 = fileadmin/templates/Public/JS/nav_dropdown.js
+  
+  10.subparts.NAVIGATION_DROPDOWN < lib.navigation_dropdown
+}

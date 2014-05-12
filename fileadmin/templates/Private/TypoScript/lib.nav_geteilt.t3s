@@ -45,5 +45,7 @@ lib.navigation {
   
 }
 
-page.10.subparts.NAVIGATION_LEVEL_1 < lib.navigation_nevel_1
-page.10.subparts.NAVIGATION < lib.navigation
+page.10.subparts {
+  NAVIGATION_LEVEL_1 < lib.navigation_nevel_1
+  NAVIGATION < lib.navigation
+}

@@ -41,17 +41,6 @@ config.no_cache = 1
 
 page = PAGE
 page {
-  config {
-    htmlTag_stdWrap {
-      cObject = TEXT
-      cObject.value (
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-      )
-    }
-  }
   
   htmlTag_setParams = class="no-js" 
   
@@ -85,7 +74,7 @@ page {
   
   10 = TEMPLATE
   10 {
-   
+    
     template = FILE
     template.file = fileadmin/templates/Private/HTML/col3.html
     
@@ -93,85 +82,39 @@ page {
     
     subparts {
       
-      CONTENT_M = CONTENT
-      CONTENT_M {
-        table = tt_content
-        select {
-          where = colPos=0
-          orderBy = sorting
-          languageField = sys_language_uid
-        }
-      }
+      CONTENT_M < styles.content.get
       
-      CONTENT_L = CONTENT
+      CONTENT_L < styles.content.getLeft
       CONTENT_L {
-        table = tt_content
         slide = -1
-        select {
-          where = colPos=1
-          orderBy = sorting
-          languageField = sys_language_uid
+        slide {
+          collect = -1
+          #collectReverse = 1
         }
       }
       
-      CONTENT_R = CONTENT
+      CONTENT_R < styles.content.getRight
       CONTENT_R {
-        table = tt_content
         slide = -1
-        select {
-          where = colPos=2
-          orderBy = sorting
-          languageField = sys_language_uid
+        slide {
+          collect = -1
+          #collectReverse = 1
         }
       }
       
-      HEADER = CONTENT
+      HEADER < styles.content.getBorder
       HEADER {
-        table = tt_content
         slide = -1
-        select {
-          where = colPos=3
-          orderBy = sorting
-          languageField = sys_language_uid
-        }
       }
       
-      #HEADER = FILES
-      #HEADER {
-      #  references {
-      #    table = pages
-      #    uid.data = page:uid
-      #    fieldName = media
-      #  }
-      #  stdWrap.wrap = <div class="flexslider"><ul class="slides">|</ul></div>
-      #  renderObj = COA
-      #  renderObj {
-      #    10 = IMAGE
-      #    10 {
-      #      altText.data = file:current:title
-      #      titleText.data = file:current:description
-      #      
-      #      wrap = <li>|</li>
-      #      file {
-      #        import.data = file:current:originalUid // file:current:uid
-      #        width = 960
-      #        height = 315
-      #      }
-      #    }
-      #  }
-      #}
-      
-      FOOTER = CONTENT
+      FOOTER < styles.content.get
       FOOTER {
-        table = tt_content
         slide = -1
-        select {
-          where = colPos=4
-          orderBy = sorting
-          languageField = sys_language_uid
-        }
+        select.where = colPos=4
       }
       
+      /*
+      # Wird KEIN SVG als Logo verwendet, muss dieser Code verwendet werden
       LOGO = IMAGE
       LOGO {
         file = fileadmin/templates/Public/IMG/{$LOGO}
@@ -183,9 +126,22 @@ page {
         titleText = {$SLOGAN}
         stdWrap.typolink.parameter = {$WEBSITE_ID}
       }
+      */
+      
+      # Wird ein SVG als Logo verwendet, muss dieser Code verwendet werden
+      LOGO = TEXT
+      LOGO.value = <a href="index.php?id={$WEBSITE_ID}"><img src="fileadmin/templates/Public/IMG/{$LOGO}" width="" height="" alt="{$TITLE}" title="{$SLOGAN}"  border="0"></a>
+      
+      CHROMEFRAME = TEXT
+      CHROMEFRAME.value = 
       
       GOOGLE_TAG_MANAGER = TEXT
       GOOGLE_TAG_MANAGER.value = {$GOOGLE_TAG_MANAGER}
+      
+      # START: Abschnitt darf nicht entfernt werden
+      GENERATOR = TEXT
+      GENERATOR.value =
+      # ENDE: Abschnitt darf nicht entfernt werden
       
     }
   }
@@ -203,6 +159,12 @@ page {
   
 }
 
+# START: Abschnitt darf nicht entfernt werden
+[globalVar = TSFE:id=1]
+page.10.subparts.GENERATOR.value = Freies TYPO3 Template von <a xmlns:cc="http://creativecommons.org/ns#" href="http://t3template4u.de" property="cc:attributionName" rel="cc:attributionURL" data-htmlarea-external="1" rtekeep="1">Phillip Baumgärtner</a> steht unter einer <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" data-htmlarea-external="1" rtekeep="1">Creative Commons Namensnennung 3.0 Unported Lizenz</a>.&nbsp;Über diese Lizenz hinausgehende Erlaubnisse können Sie unter <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.t3template4u.de" rel="cc:morePermissions" data-htmlarea-external="1" rtekeep="1">t3template4u.de</a> erhalten.
+[global]
+# ENDE: Abschnitt darf nicht entfernt werden
+
 # LAYOUTS
 [globalVar=TSFE:page|layout=1]
 page.10.template.file = fileadmin/templates/Private/HTML/col2_left.html
@@ -215,15 +177,19 @@ page.10.template.file = fileadmin/templates/Private/HTML/col1.html
 page.bodyTagCObject.wrap = <body lang="de" id="body|" class="col1-layout">
 [global]
 
-# BROWSER
-[browser = msie] && [version < 7] 
-  config.htmlTag_setParams = class="no-js ie6" 
-[browser = msie] && [version = 7] 
-  config.htmlTag_setParams = class="no-js ie7" 
-[browser = msie] && [version = 8] 
-  config.htmlTag_setParams = class="no-js ie8" 
+# IEFIX
+[browser = msie] && [version < 7]
+config.htmlTag_setParams = class="no-js lt-ie9 lt-ie8 lt-ie7" 
+[browser = msie] && [version = 7]
+config.htmlTag_setParams = class="no-js lt-ie9 lt-ie8" 
+[browser = msie] && [version = 8]
+config.htmlTag_setParams = class="no-js lt-ie9"
+[browser = msie] && [version < 7] || [browser = msie] && [version = 7,8]
+page.10.subparts {  
+  CHROMEFRAME.cObject = TEXT
+  CHROMEFRAME.cObject {      
+    data = LLL:fileadmin/templates/Private/Language/locallang.xml:chromeframe
+    outerWrap = <div class="chromeframe">|</div>
+  }
+}
 [global]
-
-
-#lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes >
-#lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list >

@@ -1,0 +1,70 @@
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<f:if condition="{contentObjectData.colPos} == 2">
+		<f:then>
+			<f:if condition="{news}">
+				<f:then>
+					<div>
+						<f:then>
+							<f:for each="{news}" as="newsItem">
+								<div class="border-bottom news-item-latest">
+									<n:link newsItem="{newsItem}" settings="{settings}">
+										<h3>{newsItem.title}</h3>
+									</n:link>
+									<f:if condition="{newsItem.teaser}">
+											<f:format.htmlspecialchars>
+												<f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop>
+											</f:format.htmlspecialchars>
+									</f:if>
+								</div>
+							</f:for>
+						</f:then>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="no-news-found">
+						<f:translate key="list_nonewsfound" />
+					</div>
+				</f:else>
+			</f:if>
+		</f:then>
+		
+		
+		<f:comment>Normale Ausgabe</f:comment>
+		
+		
+		<f:else>
+			<f:if condition="{news}">
+				<f:then>
+					<div class="news-list-view">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<f:for each="{news}" as="newsItem">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings}" />
+								</f:for>
+							</f:then>
+							<f:else>
+								<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}">
+									<f:for each="{paginatedNews}" as="newsItem">
+										<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings}" />
+									</f:for>
+								</n:widget.paginate>
+							</f:else>
+						</f:if>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="no-news-found">
+						<f:translate key="list_nonewsfound" />
+					</div>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:section>

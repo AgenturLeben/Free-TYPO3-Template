@@ -1,0 +1,22 @@
+tt_content.gridelements_pi1.20.10.setup {
+  # ID of gridelement
+  2 < lib.gridelements.defaultGridSetup
+  2 {
+    dataWrap = <div class="col-set col-3-set" id="col-{field:uid}" >|</div>
+    #columns {
+    #  # colPos ID
+    #  1 < .default
+    #  1 {
+    #    wrap = <div class="col">|</div>
+    #    )
+    #  }
+    #}
+  }
+
+  # ID of gridelement
+  3 < .2
+  3 {
+    dataWrap = <div class="col-set col-2-set" id="col-{field:uid}" >|</div>
+  }
+
+}

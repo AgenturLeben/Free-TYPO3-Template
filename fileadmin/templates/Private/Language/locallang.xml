@@ -7,22 +7,24 @@
 	<data type="array">
 		<languageKey index="default" type="array">
 			<label index="Left">Left</label>
-			<label index="Normal">Normal</label>
+			<label index="Middle">Middle</label>
 			<label index="Right">Right</label>
+			<label index="Normal">Normal</label>
 			<label index="Border">Border</label>
 			<label index="Header">Header</label>
 			<label index="Footer">Footer</label>
-			<label index="chromeframe"><![CDATA[You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_top">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.]]></label>
+			<label index="chromeframe"><![CDATA[You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.]]></label>
 		</languageKey>
 
 		<languageKey index="de" type="array">
 			<label index="Left">Links</label>
-			<label index="Normal">Normal</label>
+			<label index="Middle">Mitte</label>
 			<label index="Right">Rechts</label>
+			<label index="Normal">Normal</label>
 			<label index="Border">Rand</label>
 			<label index="Header">Kopfzeile</label>
 			<label index="Footer">Fußzeile</label>
-			<label index="chromeframe"><![CDATA[Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href="http://browsehappy.com/" target="_top">aktualisieren Sie Ihren Browser</a> oder <a href="http://www.google.com/chromeframe/?redirect=true">aktivieren Sie Google Chrome Frame</a> um Ihr Surf-Erlebnis zu verbessern.]]></label>
+			<label index="chromeframe"><![CDATA[Sie verwenden einen <b>veralteten Browser</b> mit <b>Sicherheitsschwachstellen</b> und <b>können nicht alle Funktionen dieser Webseite nutzen.</b> <a href="http://www.browser-update.org/de/update.html" target="_blank">Hier erfahren Sie, wie einfach Sie Ihren Browser aktualisieren können.</a>]]></label>
 		</languageKey>
 	</data>
 </T3locallang>
